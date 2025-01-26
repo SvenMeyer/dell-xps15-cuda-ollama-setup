@@ -22,7 +22,7 @@ sudo chmod +x /usr/local/bin/opm
 opm status
 ```
 
-Note: Full automated setup script is under development. For now, please follow the manual setup steps in [Complete Setup Guide](docs/XPS15-Power-CUDA-Guide.md).
+Note: Full automated setup script is under development. For now, please follow the manual setup steps in [Complete Setup Guide](docs/XPS15-CUDA-ollama-setup.md).
 
 ## Documentation
 - [Complete Setup Guide](docs/XPS15-Power-CUDA-Guide.md)
