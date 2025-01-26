@@ -1,0 +1,26 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Backup files
+*.bak
+backup/
+configs/backup/
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+*.pid
+*.sock
+
+# Local configuration
+.env
+.env.local
