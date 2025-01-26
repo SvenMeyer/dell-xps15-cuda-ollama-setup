@@ -10,8 +10,8 @@ Comprehensive power management solution for Dell XPS 15 laptops running Manjaro 
 
 ## Quick Start
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/dell-xps15-cuda-ollama-setup.git
+# Clone repository and enter directory
+git clone https://github.com/SvenMeyer/dell-xps15-cuda-ollama-setup.git
 cd dell-xps15-cuda-ollama-setup
 
 # Install power management script
