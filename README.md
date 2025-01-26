@@ -11,15 +11,18 @@ Comprehensive power management solution for Dell XPS 15 laptops running Manjaro 
 ## Quick Start
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/dell-xps-power-management.git
-cd dell-xps-power-management
+git clone https://github.com/yourusername/dell-xps15-cuda-ollama-setup.git
+cd dell-xps15-cuda-ollama-setup
 
-# Run setup
-sudo ./setup.sh
-
-# Install power management tool
+# Install power management script
 sudo cp scripts/opm /usr/local/bin/
+sudo chmod +x /usr/local/bin/opm
+
+# Check current power status
+opm status
 ```
+
+Note: Full automated setup script is under development. For now, please follow the manual setup steps in [Complete Setup Guide](docs/XPS15-Power-CUDA-Guide.md).
 
 ## Documentation
 - [Complete Setup Guide](docs/XPS15-Power-CUDA-Guide.md)
