@@ -21,10 +21,17 @@ A comprehensive guide for optimizing power consumption and CUDA performance on D
 - Kernel: Linux 6.12.4-1-MANJARO
 
 ### Expected Outcomes
-- Idle Power: ~4W (GPU disabled)
-- Hybrid Mode: ~6W (GPU idle)
-- Ollama Active: ~14W
-- Full CUDA support when needed
+- Idle Power: ~3.45W (hybrid mode, no network)
+- With USB-Ethernet: ~6W
+- Ollama Active: ~11-14W
+- Active Inference: ~20-35W
+
+### Power Management Strategy
+Our approach focuses on:
+1. Boot into hybrid mode (allows GPU access without reboot)
+2. Keep Ollama service disabled by default
+3. Enable Ollama only when needed via `opm` tool
+4. Maintain flexibility while optimizing power
 
 ### Required Packages
 ```bash
@@ -118,9 +125,12 @@ tearfree=yes
 
 [nvidia]
 dynamic_power_management=fine
+options=overclocking,triple_buffer
 dynamic_power_management_memory=yes
-PAT=yes
 EOF
+
+# Disable Ollama service from auto-starting
+sudo systemctl disable ollama
 ```
 
 ### NVIDIA Power Management
@@ -265,9 +275,9 @@ opm off
 ### Power States Overview
 | State | Power Draw | Description |
 |-------|------------|-------------|
-| Integrated | ~4W | GPU completely disabled |
-| Hybrid (idle) | ~6W | GPU available but idle |
-| Ollama Service | ~14W | Service running, even when idle |
+| Hybrid (idle) | ~3.45W | GPU available but idle, no network |
+| Hybrid + Network | ~6W | With USB-Ethernet adapter |
+| Ollama Service | ~11-14W | Service running, even when idle |
 | Active Inference | ~20-35W | During model execution |
 
 ### Known Power Reading Issues
